@@ -32,7 +32,7 @@ function TeacherItem() {
 
       <View style={styles.footer}>
         <Text style={styles.price}>
-          Preço/hora {'   '}
+          Price/Hour {'   '}
           <Text style={styles.priceValue}>20,00 €</Text>
         </Text>
 
@@ -44,7 +44,7 @@ function TeacherItem() {
 
           <RectButton style={styles.contactButton}>
             <Image source={whatsappIcon} />
-            <Text style={styles.contactButtonText}>Entrar em contacto</Text>
+            <Text style={styles.contactButtonText}>Get in touch</Text>
           </RectButton>
         </View>
       </View>

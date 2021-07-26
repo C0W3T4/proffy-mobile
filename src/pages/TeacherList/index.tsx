@@ -27,28 +27,28 @@ function TeacherList() {
       >
         { isFiltersVisible && (
           <View style={styles.searchForm}>
-            <Text style={styles.label}>Matéria</Text>
+            <Text style={styles.label}>Subject</Text>
             <TextInput 
               style={styles.input}
-              placeholder="Qual a matéria?"
+              placeholder="What is the subject?"
               placeholderTextColor="#c1bccc"
             />
 
             <View style={styles.inputGroup}>
               <View style={styles.inputBlock}>
-                <Text style={styles.label}>Dia da semana</Text>
+                <Text style={styles.label}>Weekday</Text>
                 <TextInput 
                   style={styles.input}
-                  placeholder="Qual o dia?"
+                  placeholder="What day of the week?"
                   placeholderTextColor="#c1bccc"
                 />
               </View>
 
               <View style={styles.inputBlock}>
-                <Text style={styles.label}>Horário</Text>
+                <Text style={styles.label}>Schedule</Text>
                 <TextInput 
                   style={styles.input}
-                  placeholder="Qual o horário?"
+                  placeholder="What time?"
                   placeholderTextColor="#c1bccc"
                 />
               </View>
