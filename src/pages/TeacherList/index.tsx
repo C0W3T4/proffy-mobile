@@ -26,13 +26,13 @@ function TeacherList() {
   function loadFavorites() {
     AsyncStorage.getItem('favorites').then(res => {
       if (res) {
-        const favoritedTeachers = JSON.parse(res);
+        const favoriteTeachers = JSON.parse(res);
 
-        const favoritedTeachersIds = favoritedTeachers.map((teacher: Teacher) => {
+        const favoriteTeachersIds = favoriteTeachers.map((teacher: Teacher) => {
           return teacher.id;
         });
 
-        setFavorites(favoritedTeachersIds);
+        setFavorites(favoriteTeachersIds);
       }
     });
   }
@@ -125,7 +125,7 @@ function TeacherList() {
             <TeacherItem 
               key={teacher.id} 
               teacher={teacher} 
-              favorited={favorites.includes(teacher.id)} 
+              favorite={favorites.includes(teacher.id)} 
             />
           );
         })}

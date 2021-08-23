@@ -23,11 +23,11 @@ export interface Teacher {
 
 interface TeacherItemProps {
   teacher: Teacher;
-  favorited: boolean;
+  favorite: boolean;
 }
 
-const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
-  const [isFavorited, setIsFavorited] = useState(favorited);
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorite }) => {
+  const [isFavorite, setIsFavorite] = useState(favorite);
   
   function handleLinkToWhatsapp() {
     api.post('connections', {
@@ -46,18 +46,18 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
       favoritesArray = JSON.parse(favorites);
     }
 
-    if (isFavorited) {
+    if (isFavorite) {
       const favoriteIndex = favoritesArray.findIndex((teacherItem: Teacher) => {
         return teacherItem.id === teacher.id;
       });
 
       favoritesArray.splice(favoriteIndex, 1);
 
-      setIsFavorited(false);
+      setIsFavorite(false);
     } else {
       favoritesArray.push(teacher);
 
-      setIsFavorited(true);
+      setIsFavorite(true);
     }
     await AsyncStorage.setItem('favorites', JSON.stringify(favoritesArray));
   }
@@ -89,10 +89,10 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
             onPress={handleToggleFavorite} 
             style={[
               styles.favoriteButton, 
-              isFavorited ? styles.favorited : {}
+              isFavorite ? styles.favorite : {}
             ]}
           >
-            { isFavorited 
+            { isFavorite 
               ? <Image source={unfavoriteIcon} />
               : <Image source={heartOutlineIcon} />
             }

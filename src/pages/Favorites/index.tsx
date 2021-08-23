@@ -14,9 +14,9 @@ function Favorites() {
   function loadFavorites() {
     AsyncStorage.getItem('favorites').then(res => {
       if (res) {
-        const favoritedTeachers = JSON.parse(res);
+        const favoriteTeachers = JSON.parse(res);
 
-        setFavorites(favoritedTeachers);
+        setFavorites(favoriteTeachers);
       }
     });
   }
@@ -40,7 +40,7 @@ function Favorites() {
             <TeacherItem 
               key={teacher.id}
               teacher={teacher}
-              favorited={true}
+              favorite={true}
             />
           );
         })}
